@@ -4,8 +4,8 @@ option casemap :none
 
 
 .data
-    BOOLDOG DB  01111001b ; Define the BOOLDOG variable
-    A1 DB ? ; Define the result variables
+    BOOLDOG DB  01111001b
+    A1 DB ?
     A2 DB ?
     A3 DB ?
     A4 DB ?
@@ -17,7 +17,7 @@ option casemap :none
 .code                       
 
 start:                                          
-    mov bl,  11100011b ; Initialize BL with the specified value
+    mov bl,  11100011b
 
     ; XOR BL, BOOLDOG
     xor bl, BOOLDOG
