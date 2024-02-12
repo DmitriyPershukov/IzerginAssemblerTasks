@@ -6,9 +6,6 @@ option casemap :none
 .data
     year dw 56
     
-    firstTwoDigits db ?
-    lastTwoDigits db ?
-    
     century db ?
     
 .code                       
