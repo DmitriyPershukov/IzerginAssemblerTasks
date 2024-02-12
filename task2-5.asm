@@ -4,19 +4,18 @@ option casemap :none
 
 
 .data
-    number dw 345
+    number dw 678
     
     firstDigit dw ?
     secondDigit dw ?
     thirdDigit dw ?
     
-    sumOfDigits dw ?
-    productOfDigits dw ?
+    reversedNumber dw ?
     
 .code                       
 
 start:                                   
-    ; Дано трехзначное число. Найти сумму и произведение его цифр.
+    ; Дано трехзначное число. Вывести число, полученное при прочтении исходного числа справа налево.
     
     ; Находим значение каждой из трех цифр
     mov dx, 0
@@ -36,21 +35,21 @@ start:
     mov secondDigit, ax
     mov thirdDigit, dx
     
-    ; Находим произведение цифр
-    mov ax, firstDigit
-    mul secondDigit
-    mul thirdDigit
+    ; Находим перевернутое число
+    mov cx, firstDigit
     
-    mov productOfDigits, ax
+    mov ax, secondDigit
+    mov dx, 10
+    mul dx
+    add cx, ax
     
-    ; Находим сумму цифр
-    mov ax, firstDigit
-    add ax, secondDigit
-    add ax, thirdDigit
+    mov ax, thirdDigit
+    mov dx, 100
+    mul dx
+    add cx, ax
     
-    mov sumOfDigits, ax
+    mov reversedNumber, cx
     
     ret                         
 
 end start
-
